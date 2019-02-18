@@ -16,6 +16,7 @@ class Lists extends Migration
         Schema::create('lists', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->integer('list_id');
             $table->timestamps();
         });
     }
