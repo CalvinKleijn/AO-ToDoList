@@ -7,7 +7,7 @@
     <form method="post" action="{{ route('lists.update', ['id' => $lists->id]) }}">
         @csrf
 
-        <label for="name">Name:</label><br>
+        <label for="name"><strong>Name:</strong></label><br>
         <input type="text" name="name" value="{{ $lists->name }}"><br><br>
 
         <button type="submit" class="btn btn-success">Edit list</button>

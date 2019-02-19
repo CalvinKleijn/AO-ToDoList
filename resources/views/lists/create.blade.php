@@ -7,7 +7,7 @@
     <form method="post" action="{{ route('lists.store') }}">
         @csrf
 
-        <label for="name">Name:</label><br>
+        <label for="name"><strong>Name:</strong></label><br>
         <input type="text" name="name"><br><br>
 
         <button type="submit" class="btn btn-success">Add list</button>

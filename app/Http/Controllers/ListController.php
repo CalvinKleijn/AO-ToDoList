@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Lists;
+use App\Task;
 use Illuminate\Http\Request;
 
 class ListController extends Controller
@@ -21,7 +22,7 @@ class ListController extends Controller
     	$list->name = $request->name;
     	$list->save();
 
-    	return redirect('/');
+    	return redirect()->route('lists.index');
     }
 
     public function editList($id){
@@ -34,12 +35,12 @@ class ListController extends Controller
     	$lists->name = $request->name;
     	$lists->save();
 
-    	return redirect('/');
+    	return redirect()->route('lists.index');
     }
 
     public function deleteList($id){
     	$lists = Lists::find($id);
     	$lists->delete();
-    	return redirect('/');
+    	return redirect()->route('lists.index');
     }
 }

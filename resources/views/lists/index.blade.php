@@ -18,7 +18,7 @@
                     <tbody>
                         @foreach($lists as $list)
                         <tr>
-                            <td><a href="#">{{ $list->name }}</a></td>
+                            <td><a href="{{ route('tasks.index', ['id' => $list->id]) }}">{{ $list->name }}</a></td>
                             <td>{{ $list->created_at }}</td>
                             <td>{{ $list->updated_at }}</td>
                             <td><a href="{{ route('lists.edit', ['id' => $list->id]) }}">Edit</a></td>
