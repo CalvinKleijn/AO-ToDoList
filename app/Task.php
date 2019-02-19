@@ -3,12 +3,21 @@
 namespace App;
 
 use App\Lists;
+use Kyslik\ColumnSortable\Sortable;
 use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    public function Lists()
+    use Sortable;
+
+
+    protected $fillable = [ 'tasks' ];
+
+
+	public $sortable = ['status', 'duur'];
+
+    public function lists()
     {
-        return $this->belongsTo(Lists::class, 'list_id', 'id');
+        return $this->belongsTo('App\Lists');
     }
 }
