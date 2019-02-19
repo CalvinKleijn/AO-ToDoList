@@ -16,6 +16,9 @@ class TaskSeeder extends Seeder
         	'id' => 1,
         	'title' => Str::random(10),
         	'body' => Str::random(50),
+            'status' => 'Good',
+            'duur' => 5,
+            'lists_id' => 1,
         ]);
     }
 }

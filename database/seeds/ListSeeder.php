@@ -15,7 +15,6 @@ class ListSeeder extends Seeder
         DB::table('lists')->insert([
         	'id' => 1,
         	'name' => Str::random(10),
-            'list_id' => 1,
         ]);
     }
 }
