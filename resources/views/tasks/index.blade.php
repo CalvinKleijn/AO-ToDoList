@@ -19,14 +19,14 @@
                     </thead>
                     <tbody>
                         @forelse($tasks as $task)
-                            <tr>
+                        <tr>
                             <td>{{ $task->title }}</td>
                             <td>{{ $task->body }}</td>
                             <td>{{ $task->status }}</td>
                             <td>{{ $task->duur }} minuten</td>
                             <td>{{ date('d-m-Y', strtotime($task->created_at)) }}</td>
-                            <td><a href="{{ route('tasks.edit', ['id' => $task->id]) }}">Edit</a></td>
-                            <td><a href="{{ route('tasks.delete', ['id' => $task->id]) }}">Delete</a>
+                            <td><a href="#">Edit</a></td>
+                            <td><a href="#">Delete</a>
                         </tr>
                         @empty
                         @endforelse
@@ -34,7 +34,7 @@
                 </table>
             </form>
 
-            <span><a href="{{ route('tasks.create') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Create Task</a></span>
+            <span><a href="{{ route('tasks.create', ['id' => $task->lists->id]) }}" class="btn btn-primary"><i class="fas fa-plus"></i> Create Task</a></span>
             <span><a href="{{ route('lists.index') }}" class="btn btn-primary">Go back to Lists</a></span>
 
 @endsection
