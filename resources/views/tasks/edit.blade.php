@@ -22,7 +22,6 @@
         <input type="text" name="duur" value="{{ $tasks->duur }}"><br><br>
 
         <button type="submit" class="btn btn-success">Edit task</button>
-        <a href="{{ route('tasks.index') }}" class="btn btn-primary">Go back</a> 
     </form>
 </div>
 
