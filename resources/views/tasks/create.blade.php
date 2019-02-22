@@ -4,7 +4,7 @@
 
 <div class="text-center">
     <h1>Add new task</h1>
-    <form method="post" action="{{ route('tasks.store', ['id' => $tasks->id]) }}">
+    <form method="post" action="{{ route('tasks.store') }}">
         @csrf
 
         <label for="title"><strong>Title:</strong></label><br>
@@ -21,10 +21,9 @@
         <label for="duur"><strong>Duur: (minuten)</strong></label><br>
         <input type="text" name="duur"><br><br>
 
-        <input type="text" name="list_id" hidden>
+        <input type="text" name="lists_id" hidden>
 
         <button type="submit" class="btn btn-success">Add task</button>
-        <a href="{{ route('tasks.index') }}" class="btn btn-primary">Go back</a> 
     </form>
 </div>
 
