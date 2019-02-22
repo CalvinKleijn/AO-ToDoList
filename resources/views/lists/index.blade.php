@@ -29,6 +29,6 @@
                 </table>
             </form>
 
-            <span><a href="{{ route('lists.create') }}" class="btn btn-primary" ><i class="fas fa-plus"></i> Create List</a></span>
+            <span><a href="{{ route('lists.create', ['id' => $list->id]) }}" class="btn btn-primary" ><i class="fas fa-plus"></i> Create List</a></span>
 
 @endsection
