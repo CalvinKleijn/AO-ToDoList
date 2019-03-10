@@ -7,6 +7,7 @@
             <form action="#">   
                 <table class="table table-striped">
                     <thead>
+                        @forelse($tasks as $task)
                         <tr>
                             <th>Title</th>
                             <th>Body</th>
@@ -18,7 +19,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($tasks as $task)
                         <tr>
                             <td>{{ $task->title }}</td>
                             <td>{{ $task->body }}</td>
@@ -28,13 +28,15 @@
                             <td><a href="#">Edit</a></td>
                             <td><a href="#">Delete</a>
                         </tr>
-                        @empty
-                        @endforelse
                     </tbody>
+                        @empty
+                            <tr>
+                                <td>No tasks found for this list</td>
+                            </tr>
+                        @endforelse
                 </table>
             </form>
 
-            <span><a href="{{ route('tasks.create', ['id' => $task->lists->id]) }}" class="btn btn-primary"><i class="fas fa-plus"></i> Create Task</a></span>
             <span><a href="{{ route('lists.index') }}" class="btn btn-primary">Go back to Lists</a></span>
 
 @endsection
