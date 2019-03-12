@@ -19,6 +19,6 @@ Route::post('/lists/update/{id}', 'ListController@updateList')->name('lists.upda
 Route::get('/lists/delete/{id}', 'ListController@deleteList')->name('lists.delete');
 
 
-Route::get('/tasks/{id}', 'TaskController@index')->name('tasks.index');
-Route::get('/tasks/{id}/create', 'TaskController@createTask')->name('tasks.create');
-Route::post('/tasks/{id}/storeTask', 'TaskController@storeTask')->name('tasks.store');
+Route::get('/tasks/{ListId}', 'TaskController@index')->name('tasks.index');
+Route::get('/tasks/{ListId}/create', 'TaskController@createTask')->name('tasks.create');
+Route::post('/tasks/storeTask', 'TaskController@storeTask')->name('tasks.store');

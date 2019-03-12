@@ -10,10 +10,6 @@ class Task extends Model
 {
     use Sortable;
 
-
-    protected $fillable = [ 'tasks' ];
-
-
 	public $sortable = ['status', 'duur'];
 
     public function lists()

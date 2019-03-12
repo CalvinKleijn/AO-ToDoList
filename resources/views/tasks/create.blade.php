@@ -4,7 +4,7 @@
 
 <div class="col-md-6">
     <h1>Add new task</h1>
-    <form method="post" action="{{ route('tasks.store', ['id' => $task->lists_id]) }}">
+    <form method="post" action="{{ route('tasks.store') }}">
         @csrf
 
         <div class="form-group">
@@ -19,17 +19,17 @@
 
         <div class="form-group">
             <label for="status"><strong>Status:</strong></label><br>
-            <input type="radio" name="status" class="form-control" value="Done">Done<br>
-            <input type="radio" name="status" class="form-control" value="Busy">Busy<br>
-            <input type="radio" name="status" class="form-control" value="Not started">Not started<br>
+            <input type="radio" name="status" value="Done">Done<br>
+            <input type="radio" name="status" value="Busy">Busy<br>
+            <input type="radio" name="status" value="Not started">Not started<br>
         </div>
 
         <div class="form-group">
-            <label for="duur"><strong>Duur: (minuten)</strong></label><br>
+            <label for="duur"><strong>Duur: (minutes)</strong></label><br>
             <input type="text" class="form-control" name="duur"><br><br>
         </div>
 
-        <input type="text" class="form-control" name="lists_id" hidden>
+        <input type="text" class="form-control" name="lists_id" value="{{ $tasks->lists_id }}" hidden>
 
         <button type="submit" class="btn btn-success">Add task</button>
     </form>

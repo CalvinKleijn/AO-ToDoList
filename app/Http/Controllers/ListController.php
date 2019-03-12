@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ListController extends Controller
 {
     public function index(){
-    	$lists = Lists::all();
+    	$lists = Lists::orderBy('id', 'desc')->get();
     	return view('lists.index', ['lists' => $lists]);
     }
 
