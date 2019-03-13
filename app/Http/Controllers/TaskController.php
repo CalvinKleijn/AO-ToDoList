@@ -31,4 +31,29 @@ class TaskController extends Controller
 
         return redirect()->back();
     }
+
+    public function editTask($ListId, $TaskId){
+        $tasks = Task::where('lists_id' ,$ListId)->first();
+        $task = Task::findOrFail($TaskId);
+        return view('tasks.edit', ['tasks' => $tasks, 'task' => $task]);
+    }
+
+    public function updateTask(Request $request, $TaskId){
+        $task = Task::findOrFail($TaskId);
+
+        $task->title = $request->title;
+        $task->body = $request->body;
+        $task->status = $request->status;
+        $task->duur = $request->duur;
+
+        $task->save();
+        return redirect()->back();
+    }
+
+    public function deleteTask($ListId, $TaskId){
+        $tasks = Task::findOrFail($ListId);
+        $task = Task::findOrFail($TaskId);
+        $task->delete();
+        return redirect()->back();
+    }
 }

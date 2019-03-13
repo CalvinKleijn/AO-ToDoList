@@ -22,3 +22,6 @@ Route::get('/lists/delete/{id}', 'ListController@deleteList')->name('lists.delet
 Route::get('/tasks/{ListId}', 'TaskController@index')->name('tasks.index');
 Route::get('/tasks/{ListId}/create', 'TaskController@createTask')->name('tasks.create');
 Route::post('/tasks/storeTask', 'TaskController@storeTask')->name('tasks.store');
+Route::get('/tasks/{ListId}/edit/{TaskId}', 'TaskController@editTask')->name('tasks.edit');
+Route::post('/tasks/update/{TaskId}', 'TaskController@updateTask')->name('tasks.update');
+Route::get('/tasks/{ListId}/delete/{TaskId}', 'TaskController@deleteTask')->name('tasks.delete');

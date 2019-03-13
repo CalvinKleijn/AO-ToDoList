@@ -32,6 +32,7 @@
         <input type="text" class="form-control" name="lists_id" value="{{ $tasks->lists_id }}" hidden>
 
         <button type="submit" class="btn btn-success">Add task</button>
+        <span><a href="{{ route('tasks.index', ['ListId' => $task->lists_id]) }}" class="btn btn-primary">Go back to Tasks</a></span>
     </form>
 </div>
 

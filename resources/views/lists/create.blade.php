@@ -11,6 +11,7 @@
 	        <input type="text" class="form-control" name="name"><br><br>
     	</div>
         <button type="submit" class="btn btn-success">Add list</button>
+        <span><a href="{{ route('lists.index') }}" class="btn btn-primary">Go back to Lists</a></span>
     </form>
 </div>
 

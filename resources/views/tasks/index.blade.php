@@ -10,7 +10,7 @@
                         <tr>
                             <th>Title</th>
                             <th>Body</th>
-                            <th>@sortablelink('status')</th>
+                            <th>Status</th>
                             <th>Duur</th>
                             <th>Created at</th>
                             <th>Edit</th>
@@ -25,8 +25,8 @@
                                 <td>{{ $task->status }}</td>
                                 <td>{{ $task->duur }} minutes</td>
                                 <td>{{ date('d-m-Y', strtotime($task->created_at)) }}</td>
-                                <td><a href="#">Edit</a></td>
-                                <td><a href="#">Delete</a>
+                                <td><a href="{{ route('tasks.edit', ['ListId' => $task->lists_id, 'TaskId' => $task->id]) }}">Edit</a></td>
+                                <td><a href="{{ route('tasks.delete', ['ListId' => $task->lists_id, 'TaskId' => $task->id]) }}">Delete</a>
                             </tr>
                         @empty
                         @endforelse
