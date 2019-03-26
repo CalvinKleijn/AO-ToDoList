@@ -9,12 +9,12 @@
 
         <div class="form-group">
             <label for="title"><strong>Title:</strong></label><br>
-            <input type="text" class="form-control" name="title"><br>
+            <input type="text" class="form-control" name="title" required><br>
         </div>
 
         <div class="form-group">
             <label for="body"><strong>Body:</strong></label><br>
-            <input type="text" class="form-control" name="body"><br>
+            <input type="text" class="form-control" name="body" required><br>
         </div>
 
         <div class="form-group">
@@ -25,14 +25,14 @@
         </div>
 
         <div class="form-group">
-            <label for="duur"><strong>Duur: (minutes)</strong></label><br>
-            <input type="text" class="form-control" name="duur"><br><br>
+            <label for="duur"><strong>Duration: (minutes)</strong></label><br>
+            <input type="text" class="form-control" name="duur" required><br><br>
         </div>
 
         <input type="text" class="form-control" name="lists_id" value="{{ $tasks->lists_id }}" hidden>
 
         <button type="submit" class="btn btn-success">Add task</button>
-        <span><a href="{{ route('tasks.index', ['ListId' => $task->lists_id]) }}" class="btn btn-primary">Go back to Tasks</a></span>
+        <span><a href="{{ route('tasks.index', ['ListId' => $tasks->lists_id]) }}" class="btn btn-primary">Go back to Tasks</a></span>
     </form>
 </div>
 
